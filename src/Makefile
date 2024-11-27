@@ -1,4 +1,4 @@
-SOURCE = main.c
+SOURCE = main.c func.c
 TARGET = main
 CC = gcc
 RM = rm -rf
