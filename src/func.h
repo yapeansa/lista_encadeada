@@ -2,23 +2,23 @@
 #define FUNC
 
 // Estrutura da lista, representação do nó
-typedef struct lista
+typedef struct no
 {
     int info;
-    struct lista *prox;
-} Lista;
+    struct no *prox;
+} no;
 
 // Função para criar uma lista vazia (inicialização)
-void lst_criar(Lista **l);
+void lst_criar(no **head);
 // Inserir no início
-void inserir(Lista **l, int v);
+void inserir(no **head, int v);
 // Função para inserir elemento no final da lista
-void inserir_final(Lista **l, int v);
+void inserir_final(no **head, int v);
 // Função para buscar um elemento específico
-int busca(Lista *l, int v);
+int busca(no *head, int v);
 // Listar elementos da lista
-void listar(Lista *l);
+void listar(no *head);
 // Função para liberar a lista
-void libera(Lista **l);
+void libera(no **head);
 
 #endif

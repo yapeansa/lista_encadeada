@@ -4,7 +4,7 @@
 
 int main()
 {
-    Lista *l;
+    no *l;
     int opcao = 0, v;
     lst_criar(&l);
 

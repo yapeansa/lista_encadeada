@@ -2,54 +2,54 @@
 #include <stdlib.h>
 #include "func.h"
 
-void lst_criar(Lista **l)
+void lst_criar(no **head)
 {
-    *l = NULL;
+    *head = NULL;
 }
 
-void inserir(Lista **l, int v)
+void inserir(no **head, int v)
 {
-    Lista *novo = (Lista *)malloc(sizeof(Lista));
+    no *novo = (no *)malloc(sizeof(no));
     novo->info = v;
-    novo->prox = *l;
-    *l = novo;
+    novo->prox = *head;
+    *head = novo;
 }
 
-void inserir_final(Lista **l, int v)
+void inserir_final(no **head, int v)
 {
-    Lista *x = (Lista *)malloc(sizeof(Lista));
+    no *x = (no *)malloc(sizeof(no));
     x->info = v;
     x->prox = NULL;
 
-    if (*l == NULL)
-        *l = x;
+    if (*head == NULL)
+        *head = x;
     else
     {
-        Lista *y = *l;
+        no *y = *head;
         while (y->prox != NULL)
             y = y->prox;
         y->prox = x;
     }
 }
 
-int busca(Lista *l, int v)
+int busca(no *head, int v)
 {
-    for (Lista *x = l; x != NULL; x = x->prox)
+    for (no *x = head; x != NULL; x = x->prox)
         if (x->info == v)
             return 1;
 
     return 0;
 }
 
-void listar(Lista *l)
+void listar(no *head)
 {
-    for (Lista *x = l; x != NULL; x = x->prox)
+    for (no *x = head; x != NULL; x = x->prox)
         printf("%d ", x->info);
     printf("\n\n");
 }
 
-void libera(Lista **l)
+void libera(no **head)
 {
     printf("Liberando lista e saindo...\n\n");
-    free(*l);
+    free(*head);
 }
