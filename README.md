@@ -1,6 +1,8 @@
-# Exemplo
+# Lista Encadeada
+
+...
 
 ```
-$ apt-get update
+$ chmod u+x run
+$ ./run
 ```
-
