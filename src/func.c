@@ -9,11 +9,13 @@ typedef struct no
 
 void menu()
 {
-    printf("\n(1) Inserir no início\n");
+    printf("\nMENU\n");
+    printf("(1) Inserir no início\n");
     printf("(2) Inserir no final\n");
     printf("(3) Listar elementos\n");
     printf("(4) Fazer uma busca\n");
-    printf("(5) Liberar lista\n");
+    printf("(5) Remover elemento\n");
+    printf("(6) Liberar lista\n");
     printf("Escolha uma opção: ");
 }
 
@@ -47,6 +49,29 @@ void inserir_final(no **head, int v)
     }
 }
 
+int remover(no **head, int v)
+{
+    no *ant = NULL;
+    no *aux = *head;
+
+    while (aux != NULL && aux->info != v)
+    {
+        ant = aux;
+        aux = aux->prox;
+    }
+
+    if (aux == NULL)
+        return 0;
+
+    if (ant == NULL)
+        *head = aux->prox;
+    else
+        ant->prox = aux->prox;
+
+    free(aux);
+    return 1;
+}
+
 int busca(no *head, int v)
 {
     for (no *x = head; x != NULL; x = x->prox)
@@ -58,9 +83,14 @@ int busca(no *head, int v)
 
 void listar(no *head)
 {
-    for (no *x = head; x != NULL; x = x->prox)
-        printf("%d ", x->info);
-    printf("\n\n");
+    if (head == NULL)
+        printf("Lista vazia.\n");
+    else
+    {
+        for (no *x = head; x != NULL; x = x->prox)
+            printf("%d ", x->info);
+        printf("\n\n");
+    }
 }
 
 void libera(no **head)

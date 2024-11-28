@@ -32,17 +32,25 @@ int main()
             printf("Qual elemento você deseja buscar? ");
             scanf("%d", &v);
             if (busca(l, v))
-                printf("O elemento %d está na lista.\n\n", v);
+                printf("O elemento %d está na lista.\n", v);
             else
-                printf("O elemento %d não está na lista.\n\n", v);
+                printf("O elemento %d não está na lista.\n", v);
             break;
         case 5:
+            printf("Qual elemento você deseja remover.\n");
+            scanf("%d", &v);
+            if (remover(&l, v))
+                printf("Elemento removido.\n");
+            else
+                printf("Elemento não encontrado.\n");
+            break;
+        case 6:
             libera(&l);
             break;
         default:
-            printf("Por favor, digite uma opção válida.\n\n");
+            printf("Por favor, digite uma opção válida.\n");
         }
-    } while (opcao != 5);
+    } while (opcao != 6);
 
     return 0;
 }

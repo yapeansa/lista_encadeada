@@ -11,6 +11,8 @@ void lst_criar(no **head);
 void inserir(no **head, int v);
 // Função para inserir elemento no final da lista
 void inserir_final(no **head, int v);
+// Função para retirar elemento da lista
+int remover(no **head, int v);
 // Função para buscar um elemento específico
 int busca(no *head, int v);
 // Listar elementos da lista
