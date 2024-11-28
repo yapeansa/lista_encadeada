@@ -37,7 +37,7 @@ int main()
                 printf("O elemento %d não está na lista.\n", v);
             break;
         case 5:
-            printf("Qual elemento você deseja remover.\n");
+            printf("Qual elemento você deseja remover?\n");
             scanf("%d", &v);
             if (remover(&l, v))
                 printf("Elemento removido.\n");
@@ -45,12 +45,17 @@ int main()
                 printf("Elemento não encontrado.\n");
             break;
         case 6:
+            printf("Digite o elemento a inserir: ");
+            scanf("%d", &v);
+            inserir_ordenado(&l, v);
+            break;
+        case 7:
             libera(&l);
             break;
         default:
             printf("Por favor, digite uma opção válida.\n");
         }
-    } while (opcao != 6);
+    } while (opcao != 7);
 
     return 0;
 }

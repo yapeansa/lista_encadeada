@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "func.h"
 
 typedef struct no
 {
@@ -15,7 +16,8 @@ void menu()
     printf("(3) Listar elementos\n");
     printf("(4) Fazer uma busca\n");
     printf("(5) Remover elemento\n");
-    printf("(6) Liberar lista\n");
+    printf("(6) Inserir em ordem crescente\n");
+    printf("(7) Liberar lista\n");
     printf("Escolha uma opção: ");
 }
 
@@ -46,6 +48,32 @@ void inserir_final(no **head, int v)
         while (y->prox != NULL)
             y = y->prox;
         y->prox = x;
+    }
+}
+
+void inserir_ordenado(no **head, int v)
+{
+    no *ant = NULL;
+    no *aux = *head;
+
+    no *novo = (no *)malloc(sizeof(no));
+    novo->info = v;
+
+    while (aux != NULL && aux->info < v)
+    {
+        ant = aux;
+        aux = aux->prox;
+    }
+
+    if (ant == NULL)
+    {
+        novo->prox = *head;
+        *head = novo;
+    }
+    else
+    {
+        novo->prox = ant->prox;
+        ant->prox = novo;
     }
 }
 
