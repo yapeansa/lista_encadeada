@@ -2,12 +2,7 @@
 #define FUNC
 
 // Estrutura da lista, representação do nó
-typedef struct no
-{
-    int info;
-    struct no *prox;
-} no;
-
+typedef struct no no;
 // Menu
 void menu(void);
 // Função para criar uma lista vazia (inicialização)

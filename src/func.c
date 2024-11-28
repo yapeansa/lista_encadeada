@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "func.h"
+
+typedef struct no
+{
+    int info;
+    struct no *prox;
+} no;
 
 void menu()
 {

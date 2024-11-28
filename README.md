@@ -11,13 +11,13 @@ Um estudo sobre a estrutura de dados de lista encadeada.
 - Buscar elementos
 - Liberar lista
 
-### Para Rodar o programa no seu computador
+## Para Rodar o programa no seu computador
 
 Baixe o repósitorio ou faça `git clone https://github.com/yapeansa/lista_encadeada.git`, entre na pasta e execute:
-```cmd
+```
 $ chmod u+x run
 ```
 Para tornar o arquivo `run` um executável. Em seguida, faça:
-```cmd
+```
 $ ./run
 ```
