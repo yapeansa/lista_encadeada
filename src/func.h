@@ -8,6 +8,8 @@ typedef struct no
     struct no *prox;
 } no;
 
+// Menu
+void menu(void);
 // Função para criar uma lista vazia (inicialização)
 void lst_criar(no **head);
 // Inserir no início

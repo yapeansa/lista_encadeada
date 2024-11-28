@@ -2,6 +2,16 @@
 #include <stdlib.h>
 #include "func.h"
 
+void menu()
+{
+    printf("\n(1) Inserir no início\n");
+    printf("(2) Inserir no final\n");
+    printf("(3) Listar elementos\n");
+    printf("(4) Fazer uma busca\n");
+    printf("(5) Liberar lista\n");
+    printf("Escolha uma opção: ");
+}
+
 void lst_criar(no **head)
 {
     *head = NULL;
