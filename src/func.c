@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include "func.h"
 
+// Estrutura da lista, representação do nó
 typedef struct no
 {
     int info;
     struct no *prox;
 } no;
 
+// Menu
 void menu()
 {
     printf("\nMENU\n");
@@ -21,11 +23,13 @@ void menu()
     printf("Escolha uma opção: ");
 }
 
+// Função para criar uma lista vazia (inicialização)
 void lst_criar(no **head)
 {
     *head = NULL;
 }
 
+// Inserir no início
 void inserir_inicio(no **head, int v)
 {
     no *novo = (no *)malloc(sizeof(no));
@@ -34,6 +38,7 @@ void inserir_inicio(no **head, int v)
     *head = novo;
 }
 
+// Função para inserir elemento no final da lista
 void inserir_final(no **head, int v)
 {
     no *x = (no *)malloc(sizeof(no));
@@ -51,6 +56,7 @@ void inserir_final(no **head, int v)
     }
 }
 
+// Função para inserir elementos de maneira ordenada (crescente)
 void inserir_ordenado(no **head, int v)
 {
     no *ant = NULL;
@@ -77,6 +83,7 @@ void inserir_ordenado(no **head, int v)
     }
 }
 
+// Função para retirar elemento da lista
 int remover(no **head, int v)
 {
     no *ant = NULL;
@@ -100,6 +107,7 @@ int remover(no **head, int v)
     return 1;
 }
 
+// Função para buscar um elemento específico
 int busca(no *head, int v)
 {
     for (no *x = head; x != NULL; x = x->prox)
@@ -109,6 +117,7 @@ int busca(no *head, int v)
     return 0;
 }
 
+// Listar elementos da lista
 void listar(no *head)
 {
     if (head == NULL)
@@ -121,6 +130,7 @@ void listar(no *head)
     }
 }
 
+// Função para liberar a lista
 void libera(no **head)
 {
     printf("Liberando lista e saindo...\n\n");
