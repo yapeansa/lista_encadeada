@@ -117,7 +117,7 @@ void listar(no *head)
     {
         for (no *x = head; x != NULL; x = x->prox)
             printf("%d ", x->info);
-        printf("\n\n");
+        printf("\n");
     }
 }
 
