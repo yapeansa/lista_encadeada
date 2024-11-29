@@ -8,7 +8,7 @@ void menu(void);
 // Função para criar uma lista vazia (inicialização)
 void lst_criar(no **head);
 // Inserir no início
-void inserir(no **head, int v);
+void inserir_inicio(no **head, int v);
 // Função para inserir elemento no final da lista
 void inserir_final(no **head, int v);
 // Função para inserir elementos de maneira ordenada (crescente)

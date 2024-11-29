@@ -18,7 +18,7 @@ int main()
         case 1:
             printf("Digite o elemento a inserir no início: ");
             scanf("%d", &v);
-            inserir(&l, v);
+            inserir_inicio(&l, v);
             break;
         case 2:
             printf("Digite o elemento a inserir no final: ");

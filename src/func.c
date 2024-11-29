@@ -26,7 +26,7 @@ void lst_criar(no **head)
     *head = NULL;
 }
 
-void inserir(no **head, int v)
+void inserir_inicio(no **head, int v)
 {
     no *novo = (no *)malloc(sizeof(no));
     novo->info = v;
