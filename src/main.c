@@ -4,9 +4,8 @@
 
 int main()
 {
-    no *l;
+    no *l = lst_criar();
     int opcao = 0, v;
-    lst_criar(&l);
 
     do
     {

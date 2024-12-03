@@ -4,7 +4,7 @@
 typedef struct no no;
 
 void menu(void);
-void lst_criar(no **head);
+no *lst_criar(void);
 void inserir_inicio(no **head, int v);
 void inserir_final(no **head, int v);
 void inserir_ordenado(no **head, int v);

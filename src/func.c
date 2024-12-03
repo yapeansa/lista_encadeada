@@ -24,9 +24,9 @@ void menu()
 }
 
 // Função para criar uma lista vazia (inicialização)
-void lst_criar(no **head)
+no *lst_criar()
 {
-    *head = NULL;
+    return NULL;
 }
 
 // Inserir no início
@@ -49,10 +49,10 @@ void inserir_final(no **head, int v)
         *head = x;
     else
     {
-        no *y = *head;
-        while (y->prox != NULL)
-            y = y->prox;
-        y->prox = x;
+        no *ant = *head;
+        while (ant->prox != NULL)
+            ant = ant->prox;
+        ant->prox = x;
     }
 }
 
