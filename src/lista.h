@@ -1,5 +1,5 @@
-#ifndef FUNC
-#define FUNC
+#ifndef LISTA
+#define LISTA
 
 typedef struct no no;
 
