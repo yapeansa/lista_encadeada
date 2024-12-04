@@ -1,4 +1,4 @@
-SOURCE = main.c func.c
+SOURCE = main.c lista.c
 TARGET = main
 CC = gcc
 RM = rm -rf
