@@ -133,6 +133,15 @@ void listar(no *head)
 // Função para liberar a lista
 void libera(no **head)
 {
-    printf("Liberando lista e saindo...\n\n");
-    free(*head);
+    if (*head != NULL)
+    {
+        printf("Liberando lista e saindo...\n\n");
+        no *p = *head;
+        while (p != NULL)
+        {
+            no *tmp = p->prox;
+            free(p);
+            p = tmp;
+        }
+    }
 }
