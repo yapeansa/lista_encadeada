@@ -49,6 +49,7 @@ int main()
             inserir_ordenado(&l, v);
             break;
         case 7:
+            printf("Liberando a lista...");
             libera(&l);
             break;
         default:

@@ -135,7 +135,6 @@ void libera(no **head)
 {
     if (*head != NULL)
     {
-        printf("Liberando lista e saindo...\n\n");
         no *p = *head;
         while (p != NULL)
         {
