@@ -2,13 +2,6 @@
 #include <stdlib.h>
 #include "lista.h"
 
-// Estrutura da lista, representação do nó
-typedef struct no
-{
-    int info;
-    struct no *prox;
-} no;
-
 // Menu
 void menu()
 {

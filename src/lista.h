@@ -1,7 +1,11 @@
 #ifndef LISTA
 #define LISTA
 
-typedef struct no no;
+typedef struct no
+{
+    int info;
+    struct no *prox;
+} no;
 
 void menu(void);
 no *lst_criar(void);
