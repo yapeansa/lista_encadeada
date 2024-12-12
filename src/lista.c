@@ -25,27 +25,27 @@ no *lst_criar()
 // Inserir no início
 void inserir_inicio(no **head, int v)
 {
-    no *novo = (no *)malloc(sizeof(no));
-    novo->info = v;
-    novo->prox = *head;
-    *head = novo;
+    no *novo_no = (no *)malloc(sizeof(no));
+    novo_no->info = v;
+    novo_no->prox = *head;
+    *head = novo_no;
 }
 
 // Função para inserir elemento no final da lista
 void inserir_final(no **head, int v)
 {
-    no *x = (no *)malloc(sizeof(no));
-    x->info = v;
-    x->prox = NULL;
+    no *novo_no = (no *)malloc(sizeof(no));
+    novo_no->info = v;
+    novo_no->prox = NULL;
 
     if (*head == NULL)
-        *head = x;
+        *head = novo_no;
     else
     {
         no *ant = *head;
         while (ant->prox != NULL)
             ant = ant->prox;
-        ant->prox = x;
+        ant->prox = novo_no;
     }
 }
 
@@ -53,15 +53,15 @@ void inserir_final(no **head, int v)
 void inserir_ordenado(no **head, int v)
 {
     no *ant = NULL;
-    no *aux = *head;
+    no *tmp = *head;
 
     no *novo = (no *)malloc(sizeof(no));
     novo->info = v;
 
-    while (aux != NULL && aux->info < v)
+    while (tmp != NULL && tmp->info < v)
     {
-        ant = aux;
-        aux = aux->prox;
+        ant = tmp;
+        tmp = tmp->prox;
     }
 
     if (ant == NULL)
@@ -80,23 +80,23 @@ void inserir_ordenado(no **head, int v)
 int remover(no **head, int v)
 {
     no *ant = NULL;
-    no *aux = *head;
+    no *tmp = *head;
 
-    while (aux != NULL && aux->info != v)
+    while (tmp != NULL && tmp->info != v)
     {
-        ant = aux;
-        aux = aux->prox;
+        ant = tmp;
+        tmp = tmp->prox;
     }
 
-    if (aux == NULL)
+    if (tmp == NULL)
         return 0;
 
     if (ant == NULL)
-        *head = aux->prox;
+        *head = tmp->prox;
     else
-        ant->prox = aux->prox;
+        ant->prox = tmp->prox;
 
-    free(aux);
+    free(tmp);
     return 1;
 }
 
