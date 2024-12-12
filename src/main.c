@@ -11,7 +11,6 @@ int main()
     {
         menu();
         scanf("%d", &opcao);
-
         switch (opcao)
         {
         case 1:

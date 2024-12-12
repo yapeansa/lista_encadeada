@@ -15,9 +15,9 @@ Um estudo sobre a estrutura de dados de lista encadeada.
 
 Baixe o repósitorio ou faça `git clone https://github.com/yapeansa/lista_encadeada.git`, entre na pasta e execute:
 ```
-$ chmod u+x run
+$ chmod u+x run.sh
 ```
-Para tornar o arquivo `run` um executável. Em seguida, faça:
+Para tornar o arquivo `run.sh` um executável. Em seguida, faça:
 ```
-$ ./run
+$ ./run.sh
 ```
