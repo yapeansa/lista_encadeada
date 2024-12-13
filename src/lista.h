@@ -11,9 +11,6 @@ typedef struct no
 // Exibição do menu
 void menu(void);
 
-// Função para criar uma lista vazia (inicialização)
-no *lst_criar(void);
-
 // Inserir nó no início da lista
 void inserir_inicio(no **head, int v);
 

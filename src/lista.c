@@ -15,11 +15,6 @@ void menu()
     printf("Escolha uma opção: ");
 }
 
-no *lst_criar()
-{
-    return NULL;
-}
-
 void inserir_inicio(no **head, int v)
 {
     no *novo_no = (no *)malloc(sizeof(no));
@@ -86,7 +81,7 @@ int remover(no **head, int v)
         return 0;
 
     if (ant == NULL)
-        *head = tmp->prox;
+        *head = (*head)->prox;
     else
         ant->prox = tmp->prox;
 
