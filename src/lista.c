@@ -5,14 +5,8 @@
 void menu()
 {
     printf("\nMENU\n");
-    printf("(1) Inserir no início ");
-    printf("(2) Inserir no final\n");
-    printf("(3) Listar elementos ");
-    printf("(4) Fazer uma busca\n");
-    printf("(5) Remover elemento ");
-    printf("(6) Inserir em ordem crescente\n");
-    printf("(7) Liberar lista\n");
-    printf("Escolha uma opção: ");
+    printf("(1) Inserir no início (2) Inserir no final\n(3) Listar elementos (4) Fazer uma busca\n");
+    printf("(5) Remover elemento (6) Inserir em ordem crescente\n(7) Liberar lista\nEscolha uma opção: ");
 }
 
 void inserir_inicio(no **head, int v)
