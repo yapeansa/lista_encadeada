@@ -13,7 +13,7 @@ Um estudo sobre a estrutura de dados de lista encadeada.
 
 ## Para Rodar o programa no seu computador
 
-Baixe o repósitorio ou faça `git clone https://github.com/yapeansa/lista_encadeada.git`, entre na pasta e execute:
+Baixe o repositório ou faça `git clone https://github.com/yapeansa/lista_encadeada.git`, entre na pasta e execute:
 ```
 $ chmod u+x run.sh
 ```

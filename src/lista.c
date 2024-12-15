@@ -2,24 +2,29 @@
 #include <stdlib.h>
 #include "lista.h"
 
-void menu()
+void menu(void)
 {
     printf("\nMENU\n");
     printf("(1) Inserir no início (2) Inserir no final\n(3) Listar elementos (4) Fazer uma busca\n");
     printf("(5) Remover elemento (6) Inserir em ordem crescente\n(7) Liberar lista\nEscolha uma opção: ");
 }
 
-void inserir_inicio(no **head, int v)
+node *init(void)
 {
-    no *novo_no = (no *)malloc(sizeof(no));
+    return NULL;
+}
+
+void inserir_inicio(node **head, int v)
+{
+    node *novo_no = (node *)malloc(sizeof(node));
     novo_no->info = v;
     novo_no->prox = *head;
     *head = novo_no;
 }
 
-void inserir_final(no **head, int v)
+void inserir_final(node **head, int v)
 {
-    no *novo_no = (no *)malloc(sizeof(no));
+    node *novo_no = (node *)malloc(sizeof(node));
     novo_no->info = v;
     novo_no->prox = NULL;
 
@@ -27,19 +32,19 @@ void inserir_final(no **head, int v)
         *head = novo_no;
     else
     {
-        no *ant = *head;
+        node *ant = *head;
         while (ant->prox != NULL)
             ant = ant->prox;
         ant->prox = novo_no;
     }
 }
 
-void inserir_ordenado(no **head, int v)
+void inserir_ordenado(node **head, int v)
 {
-    no *ant = NULL;
-    no *tmp = *head;
+    node *ant = NULL;
+    node *tmp = *head;
 
-    no *novo = (no *)malloc(sizeof(no));
+    node *novo = (node *)malloc(sizeof(node));
     novo->info = v;
 
     while (tmp != NULL && tmp->info < v)
@@ -60,10 +65,10 @@ void inserir_ordenado(no **head, int v)
     }
 }
 
-int remover(no **head, int v)
+int remover(node **head, int v)
 {
-    no *ant = NULL;
-    no *tmp = *head;
+    node *ant = NULL;
+    node *tmp = *head;
 
     while (tmp != NULL && tmp->info != v)
     {
@@ -83,35 +88,35 @@ int remover(no **head, int v)
     return 1;
 }
 
-int busca(no *head, int v)
+int busca(node *head, int v)
 {
-    for (no *x = head; x != NULL; x = x->prox)
+    for (node *x = head; x != NULL; x = x->prox)
         if (x->info == v)
             return 1;
 
     return 0;
 }
 
-void listar(no *head)
+void listar(node *head)
 {
     if (head == NULL)
         printf("Lista vazia.\n");
     else
     {
-        for (no *x = head; x != NULL; x = x->prox)
+        for (node *x = head; x != NULL; x = x->prox)
             printf("%d ", x->info);
         printf("\n");
     }
 }
 
-void libera(no **head)
+void libera(node **head)
 {
     if (*head != NULL)
     {
-        no *p = *head;
+        node *p = *head;
         while (p != NULL)
         {
-            no *tmp = p->prox;
+            node *tmp = p->prox;
             free(p);
             p = tmp;
         }

@@ -2,34 +2,38 @@
 #define LISTA
 
 // Estrutura de um nó da lista
-typedef struct no
+typedef struct node
 {
     int info;
-    struct no *prox;
-} no;
+    struct node *prox;
+} node;
+
+
+// Inicializar
+node *init(void);
 
 // Exibição do menu
 void menu(void);
 
 // Inserir nó no início da lista
-void inserir_inicio(no **head, int v);
+void inserir_inicio(node **head, int v);
 
 // Inserir nó no final da lista
-void inserir_final(no **head, int v);
+void inserir_final(node **head, int v);
 
 // Inserir nós na lista de maneira ordenada (ordem crescente)
-void inserir_ordenado(no **head, int v);
+void inserir_ordenado(node **head, int v);
 
 // Função para remover um nó da lista
-int remover(no **head, int v);
+int remover(node **head, int v);
 
 // Função para buscar um nó por valor na lista
-int busca(no *head, int v);
+int busca(node *head, int v);
 
 // Função para exibir os elementos da lista
-void listar(no *head);
+void listar(node *head);
 
 // Função para liberar a lista
-void libera(no **head);
+void libera(node **head);
 
 #endif

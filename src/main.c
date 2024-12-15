@@ -4,7 +4,7 @@
 
 int main()
 {
-    no *lista = NULL;
+    node *lista = init();
     int opcao = 0, v;
 
     do
